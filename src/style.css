@@ -1,0 +1,150 @@
+:root {
+  --color-just-black: #0e100f;
+  --color-surface-white: #fffce1;
+  --color-shockingly-green: #0ae448;
+  --color-lt-green: #abff84;
+  --color-orangey: #ff8709;
+  --color-lilac: #9d95ff;
+  --color-pink: #fec5fb;
+  --color-blue: #00bae2;
+  
+  --gradient-macha: linear-gradient(
+    114.41deg,
+    var(--color-shockingly-green) 20.74%,
+    var(--color-lt-green) 65.5%
+  );
+  --gradient-orange-crush: linear-gradient(
+    111.45deg,
+    var(--color-orangey) 19.42%,
+    #f7bdf8 73.08%
+  );
+  --gradient-lipstick: linear-gradient(
+    165.72deg,
+    #f7bdf8 21.15%,
+    #cd237f 81.93%
+  );
+  --gradient-purple-haze: linear-gradient(
+    153.58deg,
+    #f7bdf8 32.25%,
+    #2f3cc0 92.68%
+  );
+  --gradient-summer-fair: linear-gradient(
+    144.02deg,
+    var(--color-blue) 4.56%,
+    var(--color-pink) 72.98%
+  );
+}
+
+.gradient-green {
+  background: var(--gradient-macha);
+}
+
+.gradient-orange {
+  background: var(--gradient-orange-crush);
+}
+
+.gradient-purple {
+  background: var(--gradient-purple-haze);
+}
+
+.gradient-blue {
+  background: var(--gradient-summer-fair);
+}
+
+body {
+  background-color: var(--color-just-black);
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+  /* set a height because the contents are position: absolute, thus natively there's no height */
+  height: 4000px;
+  background-image:
+    linear-gradient(rgba(255,255,255,.07) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.07) 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+button {
+  position: relative; 
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  line-height: 100px;
+  text-align: center;
+  will-change: transform;
+}
+
+.box.active {
+  outline: 2px var(--color-surface-white);
+}
+
+.box-a {
+  top: 200px;
+}
+
+.box-b {
+  top: 600px;
+}
+
+.box-c {
+  top: 1000px;
+  will-change: transform;
+}
+
+.line {
+  visibility: hidden;
+  width: 2px;
+  height: 4000px;
+  position: absolute;
+  left: 400px;
+  top: 0px;
+  background-color: #777;
+}
+
+.title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+footer {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  padding: 6px 10px 10px 12px;
+  border-top-left-radius: 26px;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.end {
+  position: absolute;
+  /*   bottom: 0; */
+  top: 2400px;
+  transform: translateY(-100%);
+  font-size: 30px;
+  color: white;
+}
+  
